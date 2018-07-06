@@ -1,0 +1,49 @@
+
+<!DOCTYPE html><html lang='en' >
+<head>
+
+<title> Minimal Music Player UI</title>
+
+<meta charset='UTF-8'>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'><link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</head><body>
+<div id="project-wrapper">
+	<div id="project-container">
+		<div id="overlay"></div>
+		<div id="content">
+			<h2>Last Voyage (Club Mix)</h2>
+			<h3>Orbital Velocity</h3>
+			<input type="range" value="30" />
+			<div id="controls">
+				<div class="column"><i class="fa fa-refresh" aria-hidden="true"></i></div>
+				<div class="column"><i class="fa fa-step-backward" aria-hidden="true"></i></div>
+				<div class="column"><i class="fa fa-play play-btn fa-fw" aria-hidden="true"></i></div>
+				<div class="column"><i class="fa fa-step-forward" aria-hidden="true"></i></div>
+				<div class="column active"><i class="fa fa-random" aria-hidden="true"></i></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script >$('.play-btn').click(function() {
+	if ( $(this).hasClass("fa-play") ) {
+		$(this).removeClass("fa-play");
+		$(this).addClass("fa-pause");
+	} else {
+		$(this).removeClass("fa-pause");
+		$(this).addClass("fa-play");
+	}
+});
+
+$('.column').click(function() {
+	$(this).toggleClass("active");
+})
+
+</script>
+</body></html>
